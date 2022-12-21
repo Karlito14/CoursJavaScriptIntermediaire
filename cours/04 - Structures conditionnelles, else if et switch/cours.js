@@ -11,8 +11,20 @@ if (condition) {
 }
 
 // Autoriser certains accès sur un forum
-// let typeUtilisateur = "";
+let typeUtilisateur = "membre";
 
+switch (typeUtilisateur){
+  case "administrateur": 
+    console.log("Vous avez accès à l'administration");
+  case "modérateur":
+    console.log("Vous avez accès à la modération");
+  case "membre":
+    console.log("Vous avez accès à la création de contenu");
+    break;
+  default :
+    console.log("Vous pouvez uniquement lire le forum");
+  break;
+}
 // if (typeUtilisateur === "administrateur") {
 //   console.log("Accès autorisés : administration + modération + création de contenu");
 // } else {

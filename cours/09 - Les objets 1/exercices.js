@@ -24,11 +24,42 @@
 // Exercice 0
 // Créez la fonction creerHoraire(monHeure, mesMinutes) ci-dessous.
 
+function creerHoraire(monHeure,mesMinutes){
+    let rdv = {
+        heures : monHeure,
+        minutes : mesMinutes,
+    };
+    return rdv;
+}
+
+
+
 // Exercice 1
 // Créez la fonction afficherHoraire(horaire) ci-dessous.
+function afficherHoraire(horaire){
+
+    return `L'horaire est ${horaire.heures} heures et ${horaire.minutes} minutes.`
+}
 
 // Exercice 2
 // Créez la fonction avancerDe20Minutes(horaire) ci-dessous.
+function avancerDe20Minutes(horaire) {
+    let duree = 20;
+    let rdv = {
+        heures : horaire.heures,
+        minutes : horaire.minutes,
+    }
+    rdv.minutes = rdv.minutes + duree;
+    while (rdv.minutes >= 60){
+        rdv.heures++;
+        rdv.minutes -= 60;
+    }
+    if(rdv.heures >= 24){
+        rdv.heures -=24;
+    }
+    return rdv;
+    
+}
 
 // Exerice 3 — Refactoring
 // Pour faire cet exercice :
@@ -36,22 +67,22 @@
 // 1. Décommentez la fonction validerRdv originale ci-dessous.
 // 2. Faites les étapes de remaniement indiquées sur le site (exercices.html).
 
-// function validerRdv(debutRdvHeures, debutRdvMinutes, duree, finJourneeHeures, finJourneeMinutes) {
-//   // ETAPE 1 : Calcul de la fin du RDV
-//   let finRdvHeures = debutRdvHeures;
-//   let finRdvMinutes = debutRdvMinutes + duree;
+function validerRdv(rdv, finJournee) {
+   // ETAPE 1 : Calcul de la fin du RDV
+   let finRdvHeures = rdv.heures;
+   let finRdvMinutes = rdv.minutes + rdv.duree;
 
-//   // ETAPE 1.1 : Gestion du cas particulier où les minutes sont >= 60
-//   while (finRdvMinutes >= 60) {
-//     finRdvHeures++;
-//     finRdvMinutes -= 60;
-//   }
+   // ETAPE 1.1 : Gestion du cas particulier où les minutes sont >= 60
+   while (finRdvMinutes >= 60) {
+     finRdvHeures++;
+     finRdvMinutes -= 60;
+   }
 
-//   // ETAPE 2 : Est-ce que la fin du RDV est avant la fin de la journée ?
-//   let rdvOk = (finRdvHeures < finJourneeHeures
-//     || (finRdvHeures === finJourneeHeures
-//     && finRdvMinutes < finJourneeMinutes));
+   // ETAPE 2 : Est-ce que la fin du RDV est avant la fin de la journée ?
+   let rdvOk = (finRdvHeures < finJournee.heures
+     || (finRdvHeures === finJournee.heures
+     && finRdvMinutes < finJournee.minutes));
 
-//   // On renvoie si le RDV peut se faire ou pas
-//   return rdvOk;
-// }
+   // On renvoie si le RDV peut se faire ou pas
+   return rdvOk;
+}

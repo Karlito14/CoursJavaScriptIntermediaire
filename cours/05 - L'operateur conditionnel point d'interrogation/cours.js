@@ -1,16 +1,17 @@
 /* L'opérateur conditionnel '?' */
 
 /* Affectation conditionnelle d'une valeur */
-let celibataire = true;
+let celibataire = false;
+let mariage = false;
+let pacs = true;
 let etatCivil = "";
+let genre = "femme";
 
-if (celibataire) {
-  etatCivil = "Célibataire";
-} else {
-  etatCivil = "Concubinage";
-}
-
-console.log(etatCivil);
+etatCivil = (celibataire) ? "Célibataire" 
+  : (mariage) ? "Marié" 
+    : (pacs) ? "Pacsé" : "Concubinage";
+    
+console.log(etatCivil)
 
 /* Utilisation de l'opérateur ternaire '?' */
 // let celibataire = true;
@@ -51,7 +52,7 @@ console.log(etatCivil);
 // console.log(etatCivil);
 
 /* Exécution conditionnelle (non recommandé) */
-// function proposerPacs() { 
+// function proposerPacs() {
 //   console.log("Souhaitez-vous vous pacser ?");
 //   return "Concubinage";
 // }

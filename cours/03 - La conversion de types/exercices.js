@@ -40,39 +40,43 @@ Bon courage !
 */
 
 // Quelques variables utiles créer des expressions...
-let nombre = 42
-let chaine = "chaine"
+let nombre = 42;
+let chaine = "chaine";
 let nul = null;
 let vrai = true;
 let faux = false;
 let indefini = undefined;
 
 // On commence par des expressions faciles
-!chaine
-!!!!vrai
-!!!nombre
-chaine + !nombre
-vrai + nombre
-3 * vrai + nombre - 2
-vrai + faux
-12 / "6"
-12 / "6" + indefini
-chaine + 15 + 3
-15 + 3 + chaine
-"" * 2 + 42
+!chaine  //false
+!!!!vrai  //true
+!!!nombre //false
+chaine + !nombre  //chainefalse
+vrai + nombre //43
+3 * vrai + nombre - 2 //43
+vrai + faux //1
+12 / "6" //2
+12 / "6" + indefini //Nan
+chaine + 15 + 3  //chaine153
+15 + 3 + chaine //18chaine
+"" * 2 + 42 //42
 
 // Un peu plus difficile...
-12 / ("6" + indefini)
-12 / nul
+12 / ("6" + indefini) //Nan
+12 / nul  //
 "foo" + + "bar"
 nombre +++ chaine
 chaine +++ nombre
-!!"false" === !!"true"
-nul + 1
---nombre + "5"
+!!"false" === !!"true" //true
+nul + 1 //
+--nombre + "5" //415
 (--nombre + "5") * ""
 (--nombre + "5") * vrai
 --nombre+ + "5"
 3 > 2 > 1
 1 + - + 1
 1 + - + - + 1
+
+let superAge ="";
+superAge += ++42;
+console.log(superAge);
