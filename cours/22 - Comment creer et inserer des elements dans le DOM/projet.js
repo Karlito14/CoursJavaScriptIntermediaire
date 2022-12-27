@@ -26,9 +26,9 @@ const liste = document.querySelector('#liste');
 // liste.append(li, li2);
 
 /* Clonage */
-// const dernierItem = liste.querySelector('li:last-of-type');
-// const nouvelItem = dernierItem.cloneNode(true);
-// liste.append(nouvelItem);
+ const dernierItem = liste.querySelector('li:last-of-type');
+ const nouvelItem = dernierItem.cloneNode(true);
+ liste.append(nouvelItem);
 
 /* Insertion d'éléments à une position donnée */
 // liste.insertAdjacentHTML('beforebegin', "<p>Élément ajouté via <strong>beforebegin</strong> (🇫🇷 avant le début)</p>");

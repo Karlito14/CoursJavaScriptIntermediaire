@@ -8,7 +8,7 @@ const liste = document.querySelector('#liste');
 // liste.outerHTML = ""; // On supprimer tout !
 
 /* Anciennes méthodes */
-// const anciennesMethodes = liste.querySelector('li:nth-of-type(2) ul');
+const anciennesMethodes = liste.querySelector('li:nth-of-type(2) ul');
 // const removeChildItem = anciennesMethodes.querySelector('li:nth-of-type(1)');
 // anciennesMethodes.removeChild(removeChildItem);
 /* Remplacement d'un noeud */
@@ -17,7 +17,7 @@ const liste = document.querySelector('#liste');
 // anciennesMethodes.replaceChild(nouvelItem, removeChildItem);
 
 /* Nouvelles méthodes */
-// const removeItem = liste.querySelector('li:nth-of-type(3) ul li:nth-of-type(1)');
+//const removeItem = liste.querySelector('li:nth-of-type(3) ul li:nth-of-type(1)');
 // removeItem.remove();
 /* Remplacement d'un noeud */
 // const nouvelItem = document.createElement('li');
