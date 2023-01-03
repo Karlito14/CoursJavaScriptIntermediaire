@@ -56,14 +56,15 @@ zoneClick.addEventListener('click', incrementation);
 
 /* Création de la fonction pour décrémenter*/ 
 function decrementation(evenement){
-    //Suppresion du menu du click droit
-    evenement.preventDefault();
     changerValeur(valeur - valueDec.value)
 }
 
 /* Décrémentation de la valeur du paragraphe lors d'un click */
 boutonDec.addEventListener('click', decrementation);
-zoneClick.addEventListener('contextmenu', decrementation);
+zoneClick.addEventListener('contextmenu', function(evenement){
+    evenement.preventDefault();
+    decrementation();
+});
 
 /* Configuration du bouton Reset */
 const boutonReset = document.querySelector('#bouton-reset');
@@ -71,3 +72,12 @@ function reset(){
     changerValeur(0);
 }
 boutonReset.addEventListener('click', reset);
+
+document.addEventListener('keydown', function(event){
+    if(event.key === 'ArrowUp'){
+        incrementation();
+    }
+    if(event.key === 'ArrowDown'){
+        decrementation();
+    }
+})
